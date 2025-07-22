@@ -1,0 +1,8 @@
+[user]
+	name = ptlx
+	email = ptlx@outlook.jp
+	signingkey = 9268F0F9CF2CEDDE
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true

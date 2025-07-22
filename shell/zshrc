@@ -1,0 +1,60 @@
+export PATH=$PATH:$HOME/.maestro/bin
+
+# Homebrew (Linuxbrew)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# History settings
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+
+# Vi mode
+bindkey -v
+
+# Aliases
+alias l="ls"
+alias ll="ls -la"
+alias v="nvim"
+
+# Navigation
+alias d="cd ~/dotfiles"
+alias p="cd ~/program"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Git
+alias g="git"
+alias ga="git add"
+alias gaa="git add --all"
+alias gs="git status"
+alias gc="git commit -vm"
+alias gac="git add --all && git commit -vm"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gf="git fetch"
+alias gp="git push"
+alias gl="git pull"
+alias gd="git diff"
+
+# Docker
+alias dp="docker ps"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dcl="docker compose logs -f"
+alias dce="docker compose exec"
+
+# Clear
+alias c="clear"
+
+# OPAM configuration
+[[ ! -r /home/ptlx/.opam/opam-init/init.zsh ]] || source /home/ptlx/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# GHCup environment
+[ -f "/home/ptlx/.ghcup/env" ] && source "/home/ptlx/.ghcup/env"
+
+# TeX
+export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux

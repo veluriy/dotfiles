@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  dotfiles-test:
+    build:
+      context: .
+      dockerfile: test/Dockerfile
+    container_name: dotfiles-test
+    volumes:
+      - .:/home/testuser/dotfiles
+    working_dir: /home/testuser/dotfiles
+    command: ["./test/test_simple.sh"]
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    tty: true
+
+  dotfiles-interactive:
+    build:
+      context: .
+      dockerfile: test/Dockerfile
+    container_name: dotfiles-interactive
+    volumes:
+      - .:/home/testuser/dotfiles
+    working_dir: /home/testuser/dotfiles
+    command: ["/bin/bash"]
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    tty: true
+    stdin_open: true
